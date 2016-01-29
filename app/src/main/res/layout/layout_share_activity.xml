@@ -7,9 +7,16 @@
     <include layout="@layout/layout_app_info" />
 
     <Button
-        android:id="@+id/button_share"
+        android:id="@+id/button_share_wechat"
         style="@style/CommonButton"
         android:layout_width="wrap_content"
-        android:text="分  享" />
+        android:text="微  信  分  享"
+        android:layout_marginBottom="80dp"/>
+
+    <Button
+        android:id="@+id/button_share_aggregate"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:text="聚  合  分  享" />
 
 </RelativeLayout>

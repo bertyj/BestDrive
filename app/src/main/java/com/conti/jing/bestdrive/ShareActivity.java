@@ -9,7 +9,8 @@ import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class ShareActivity extends Activity implements View.OnClickListener {
-    private Button mShareButton;
+    private Button mAggregateShareButton;
+    private Button mWechatShareButton;
     private OnekeyShare mOnekeyShare;
 
     @Override
@@ -20,7 +21,7 @@ public class ShareActivity extends Activity implements View.OnClickListener {
         mOnekeyShare = new OnekeyShare();
     }
 
-    private void setShare() {
+    private void setAggregateShare() {
         ShareSDK.initSDK(this);
         mOnekeyShare.disableSSOWhenAuthorize();
         mOnekeyShare.setTitle("分享标题：第三方分享测试");
@@ -32,17 +33,26 @@ public class ShareActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        mShareButton = (Button) findViewById(R.id.button_share);
-        mShareButton.setOnClickListener(this);
+        mAggregateShareButton = (Button) findViewById(R.id.button_share_aggregate);
+        mAggregateShareButton.setOnClickListener(this);
+        mWechatShareButton = (Button) findViewById(R.id.button_share_wechat);
+        mWechatShareButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case R.id.button_share:
-                setShare();
+            case R.id.button_share_aggregate:
+                setAggregateShare();
+                break;
+            case R.id.button_share_wechat:
+                setWechatShare();
                 break;
         }
+    }
+
+    private void setWechatShare() {
+
     }
 }
